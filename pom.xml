@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.1</version>
+        <version>2.4.2</version>
     </parent>
 
     <packaging>pom</packaging>
@@ -20,6 +20,7 @@
     <modules>
         <module>expand/mekatok-expand-control</module>
         <module>expand/mekatok-expand-sso</module>
+        <module>expand/mekatok-expand-gateway</module>
         <module>framework/mekatok-framework-core</module>
         <module>framework/mekatok-framework-tool</module>
         <module>framework/mekatok-framework-security</module>
@@ -62,6 +63,8 @@
         <ganymed-ssh2.version>build210</ganymed-ssh2.version>
         <spring-boot-admin.version>2.3.1</spring-boot-admin.version>
         <dynamic-datasource.version>3.3.2</dynamic-datasource.version>
+        <spring-cloud.version>2020.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
     </properties>
 
     <dependencies>
@@ -85,6 +88,21 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- 平台内模块依赖关系版本管理 开始 -->
             <!-- 平台内项目间依赖 -->
             <dependency>
@@ -176,7 +194,6 @@
             <!-- 平台内模块依赖关系版本管理 结束 -->
 
             <!-- 工具库相关依赖 -->
-
             <!-- 反射库相关依赖 -->
             <dependency>
                 <groupId>org.reflections</groupId>
@@ -320,6 +337,26 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>https://repository.aspose.com/repo/</url>
+        </repository>
+    </repositories>
+
+
     <build>
         <plugins>
             <plugin>
@@ -335,14 +372,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>AsposeJavaAPI</id>
-            <name>Aspose Java API</name>
-            <url>https://repository.aspose.com/repo/</url>
-        </repository>
-    </repositories>
 
     <developers>
         <developer>

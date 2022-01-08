@@ -4,6 +4,8 @@
 # external file
 external/zookeeper/
 external/redis/
+external/skywalking/
+external/nacos/
 
 # Redis dump
 dump.rdb
