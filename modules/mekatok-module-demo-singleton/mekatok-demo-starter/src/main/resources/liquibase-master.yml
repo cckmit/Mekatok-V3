@@ -3,3 +3,5 @@ databaseChangeLog:
       file: liquibase/liquibase-ou.xml
   - include:
       file: liquibase/liquibase-dic.xml
+  - include:
+      file: liquibase/liquibase-disk.xml

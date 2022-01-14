@@ -47,16 +47,12 @@
         </dependency>
         <dependency>
             <groupId>icu.guokai</groupId>
-            <artifactId>mekatok-framework-flowable</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>icu.guokai</groupId>
             <artifactId>mekatok-framework-log</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>

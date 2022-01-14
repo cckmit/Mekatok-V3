@@ -120,7 +120,7 @@
 
     <!-- 用户组织表 -->
     <changeSet id="t_ou_user_organize_20210906" author="guokai">
-        <createTable tableName="T_OU_USER_ORGANIZE">
+        <createTable tableName="T_OU_USER_ORGANIZE" remarks="用户组织表">
             <column name="ID" type="varchar(19)" remarks="主键">
                 <constraints primaryKey="true" nullable="false" unique="true" primaryKeyName="t_ou_user_organize_id_primary_key" />
             </column>

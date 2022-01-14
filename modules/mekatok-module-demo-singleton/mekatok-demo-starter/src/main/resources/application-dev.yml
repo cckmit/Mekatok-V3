@@ -19,15 +19,10 @@ spring:
     dynamic:
       datasource:
         master:
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://127.0.0.1:5432/mekatok?useSSL=false
-          username: mekatok
-          password: mekatok
-        flowable:
-          driver-class-name: org.postgresql.Driver
-          url: jdbc:postgresql://127.0.0.1:5432/flowable?useSSL=false
-          username: guokai
-          password: 123456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://guokai.me:3306/mekatok?useSSL=false
+          username: root
+          password: root
   redis:
     host: 127.0.0.1
     port: 6379
